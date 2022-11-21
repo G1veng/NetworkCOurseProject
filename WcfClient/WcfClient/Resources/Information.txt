@@ -1,0 +1,15 @@
+﻿Program created: Shishko Daniil Yerevich
+Group: 404
+
+Input data: 1 2 3 4 5 6 7 8 9
+1 - is total amount of blocks;
+2 - is amount of already occupied blocks;
+3, 4, 5... - is pages.
+
+Output data:
+1 2 3 4 |
+6
+1, 2, 3, 4 - pages on current step;
+'|' - interruption if absent then there
+was not interruption;
+6 - amount of interruptions.

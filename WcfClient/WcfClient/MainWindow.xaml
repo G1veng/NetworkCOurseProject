@@ -1,0 +1,64 @@
+﻿<Window x:Class="WcfClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WcfClient"
+        mc:Ignorable="d"
+        Title="Page replacement" Height="450" Width="800">
+    
+    <Window.Resources>
+        <Image x:Key="Pencil" Source="D:/5 семестр/Сети/Курсач/WcfClient/WcfClient/Resources/pencil.jpg"/>
+        <Image x:Key="Discet" Source="D:/5 семестр/Сети/Курсач/WcfClient/WcfClient/Resources/Discet.jpg"/>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Menu Height="25" VerticalAlignment="Top">
+            <MenuItem Header="File" Height="25" FontSize="16">
+                <MenuItem Header="Close" Click="MenuItem_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Settings" Height="25" FontSize="16" Margin="0, 0, 0, 0" Click="MenuSettings_Click"/>
+            <MenuItem Header="Help" FontSize="16">
+                <MenuItem Header="Info" Click="MenuInformation_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <ScrollViewer Margin="0, 30, 0, 0">
+            <TextBlock x:Name="output" Margin="0, 30, 0, 0" FontSize="30" TextAlignment="Center"
+                       TextWrapping="Wrap"/>
+        </ScrollViewer>
+
+        <Button Grid.Column="1" Height="29" Width="80" FontSize="16" Content="Calculate" Click="CalculateButton_Click"
+                VerticalAlignment="Bottom" Margin="0, 0, 50, 20" HorizontalAlignment="Right" IsEnabled="False"
+                x:Name="calculateButton"/>
+        
+        <ComboBox Grid.Column="1" Margin="60, 0, 0, 25" VerticalAlignment="Bottom" Width="60"
+                  x:Name="comboBox" IsEditable="False" HorizontalAlignment="Left"
+                  Height="20" SelectionChanged="ComboBox_SelectionChanged">
+        </ComboBox>
+
+        
+        <WpfPlot Name="WpfPlot1" Grid.Column="1" Margin="10, 40, 10, 50"/>
+
+        <Button Grid.Column="1" Height="30" Width="80" FontSize="16" Content="Connect"
+                VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"
+                Name="connectButton" Click="ConnectButton_Click"/>
+
+        <Button x:Name="setDataButton" Grid.Column="1" Height="29" Width="80" FontSize="16"
+                Content="Set data" Click="SetDataButton_Click"
+                VerticalAlignment="Bottom" Margin="145, 0, 0, 20" HorizontalAlignment="Left"/>
+
+        <Button Width="20" Height="20" Margin="80, 0, 0, 25" Grid.Column="1"
+                x:Name="editButton" Click="EditButton_Click" IsEnabled="True"
+                VerticalAlignment="Bottom" Content="{StaticResource Pencil}"/>
+
+        <Button Width="20" Height="20" Grid.Column="1" Margin="0, 0, 27, 25"
+                x:Name="saveButton" Click="Save_Click" IsEnabled="False"
+                VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                Content="{StaticResource Discet}"/>
+    </Grid>
+</Window>
